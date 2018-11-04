@@ -1,8 +1,7 @@
  /* Bordered form */
-
-
 body{
-    background-image: url(../images/hey.png)
+    
+    background-color: grey;
 
 }
 
@@ -118,3 +117,4 @@ span.psw {
     }    
 }
 
+}
