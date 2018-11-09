@@ -11,7 +11,7 @@ parcels = []
 @app.route('/api/v1/parcels', methods=['POST'])
 def create_parcel_delivery_order():
     parcel = {
-        'id': len(parcels)+1,
+        'parcelId': len(parcels)+1,
         'name': request.json['name'],
         'price':  request.json['price'],
         'pickup':request.json['pickup'],
@@ -26,6 +26,17 @@ def create_parcel_delivery_order():
 @app.route('/api/v1/parcels', methods =['GET'])
 def get_all():
     return jsonify({'parcels':parcels})
+
+
+    # In this endpoint, a user is able to get one specific parcel order 
+
+@app.route('/api/v1/parcels/<int:parcelId>', methods = ['GET'])
+def get_specific_order(parcelId):
+    for parcel_order in parcels:
+        if parcel_order['parcelId'] == parcelId:
+            return jsonify({'parcel_order': parcel_order})
+    return jsonify({'message': 'There are no parcel orders'})
+
 
 
 
