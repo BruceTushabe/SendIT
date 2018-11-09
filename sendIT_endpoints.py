@@ -21,6 +21,12 @@ def create_parcel_delivery_order():
     parcels.append(parcel)
     return jsonify({'parcel': parcel})
 
+    # This is the END POINT for USER can get all parcels
+
+@app.route('/api/v1/parcels', methods =['GET'])
+def get_all():
+    return jsonify({'parcels':parcels})
+
 
 
 
