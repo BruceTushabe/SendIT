@@ -4,7 +4,6 @@ app = Flask(__name__)
 # Empty list where parcels are to be POSTED OR GOT
 
 parcels = []
-users = []
     
 # Creating the END POINT for USER can add a parcel order
  
