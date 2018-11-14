@@ -1,19 +1,35 @@
- /* Bordered form */
+/* Bordered form */
 
 body{
     
-    background-color: grey;
-
+    background-image:url(images/delivery.png)
+}
+/* Styling The Navbar */
+.navbar{
+	overflow: hidden;
+    background-color: #e9e9e9;	
 }
 
-h1{ text-align:center; 
-    color: white;
+.navbar a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
 }
 
- .page{
-    background-image: url(../images/hey.png)
-
+.navbar a:hover {
+    background-color: #ddd;
+	color: black;
 }
+
+
+h2{ text-align:center; 
+    color: green;
+}
+
 
  form {
     border: 3px solid #f1f1f1;
@@ -24,7 +40,7 @@ h1{ text-align:center;
     background-color: #ffffff;
 	width: 30%;
 	height: 400px;
-	margin: 10% auto auto;
+	margin: 5% auto auto;
 	border-radius: 10px;
     overflow:hidden;
     box-sizing: border-box
