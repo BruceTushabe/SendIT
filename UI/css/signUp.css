@@ -2,7 +2,7 @@
 
 body{
     
-    background-image:url(images/delivery.png)
+    background-image:url('../images/delivery.png')
 }
 /* Styling The Navbar */
 .navbar{
@@ -26,8 +26,8 @@ body{
 }
 
 
-h2{ text-align:center; 
-    color: green;
+h3{ text-align:center; 
+    color: white;
 }
 
 
