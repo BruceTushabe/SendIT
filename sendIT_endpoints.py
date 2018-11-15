@@ -11,11 +11,12 @@ parcels = []
 @app.route('/api/v1/parcels', methods=['POST'])
 def create_parcel_delivery_order():
     parcel = {
-        'id': len(parcels)+1,
+        'parcelId': len(parcels)+1,
         'name': request.json['name'],
         'price':  request.json['price'],
         'pickup':request.json['pickup'],
-        'destination':request.json['destination']
+        'destination':request.json['destination'],
+        'status':request.json['status']
         }
 
     parcels.append(parcel)

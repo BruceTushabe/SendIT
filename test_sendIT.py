@@ -1,9 +1,30 @@
+
+from flask import jsonify
+from sendIT_endpoints import app
 import pytest
 
-def test_capital_case():
-    assert capital_case('semaphore') == "semaphore"
+@pytest.fixture
+def client():
+        test_client = app.test_client()
+        return test_client
 
-def test_raises_exception_on_non_string_arguments():
-    with pytest.raises(TypeError):
-        capital_case(9)
-    
+class TestEndpoints():
+        def test_createParcelOrder(self,client):
+                response = client.post("/api/v1/parcel", data=jsonify({
+               'parcelId':1,
+               'name': 'car',
+               'price': '$ 1000',
+               'pickup': 'Germany',
+               'destination': 'Kampala',
+               'status':'delivered'
+                }))
+                assert response.status_code == 201
+
+
+
+
+
+
+        
+
+
