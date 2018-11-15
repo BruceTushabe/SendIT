@@ -1,12 +1,13 @@
 
 body
 {
+ background-image:url('../images/parcels');
  margin:0 auto;
  padding:0px;
  text-align:center;
  width:100%;
  font: Helvetica
- /*background-color:#ECF0F1;*/
+
 }
 
 /* Styling The Navbar */
