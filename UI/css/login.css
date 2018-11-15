@@ -1,12 +1,11 @@
  /* Bordered form */
 body{
     
-    background-color: grey;
+    background-image: url("../images/delivery.png")
 
 }
-h1{ text-align:center; 
-    color: white;
-
+h1,h2{ text-align:center; 
+    color:white;
 }
 
  form {
