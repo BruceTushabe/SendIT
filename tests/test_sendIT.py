@@ -1,6 +1,6 @@
 
 from flask import jsonify
-from sendIT_endpoints import app
+from endpoints import app
 import pytest
 
 @pytest.fixture

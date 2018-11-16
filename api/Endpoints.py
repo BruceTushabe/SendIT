@@ -1,23 +1,39 @@
 from flask import Flask, jsonify, request
+from .model import Parcels
 app = Flask(__name__)
 
 # Empty lists where delivery orders are to be POSTED OR GOT
 
-parcels = []    
+parcels = []
 
 # Creating the END POINT for User can create a delivery
  
 @app.route('/api/v1/parcels', methods=['POST'])
 def create_parcel_order():
+    parcel_order = request.get_json()
+    name = parcel_order.get('name'),
+    price = parcel_order.get('price')
+    pickup = parcel_order.get('pickup'),
+    destination = parcel_order.get('destination'),
+    status = True
+
+    order = Parcels(name,price,pickup,destination,status)
+    if order.name == '':
+        return jsonify({'message': 'please fill in the parcel name'})
+    
+
+    
+
 
     parcel_order = {
         'parcelId': len(parcels)+1,
         'name': request.json['name'],
         'pickup': request.json['pickup'],
         'destination': request.json['destination'],
-        'price': request.json['price'],
-        'status': request.json['status']
+        'price': request.json['price']
         }
+
+
 
     parcels.append(parcel_order)
     return jsonify({'parcel_order': parcel_order})
@@ -48,6 +64,5 @@ def update_order(parcelId):
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
 
